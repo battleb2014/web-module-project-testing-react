@@ -11,17 +11,17 @@ const testShow = {
         {
             id: '1',
             name: 'A',
-            episodes: {}
+            episodes: []
         },
         {
             id: '2',
             name: 'B',
-            episodes: {}
+            episodes: []
         },
         {
             id: '3',
             name: 'C',
-            episodes: {}
+            episodes: []
         }
     ]
 };
@@ -76,7 +76,7 @@ test('component renders when no seasons are selected and when rerenders with a s
     expect(episodes).not.toBeInTheDocument();
         
     rerender(
-        <Show show = { testShow } selectedSeason = { 0 } />
+        <Show show = { testShow } selectedSeason = { testShow.seasons[1].episodes } />
     );
 
     expect(episodes).toBeInTheDocument();
